@@ -32,7 +32,7 @@ A concise, **AI-driven** chatbot that leverages **Amazon Bedrock Knowledge Bases
 
 1. The user types a finance-related question in the React chatbot interface. The chat UI is designed to be responsive and Markdown-rendered, ensuring that responses are clear and well-formatted.
 2. When the user submits a query, the React app sends a POST request to the API Gateway endpoint, passing the question in JSON format.
-3. The API Gateway triggers an AWS Lambda function that processes the query. The function calls Amazon Bedrock using the `**retrieve_and_generate**` method, which searches a pre-configured knowledge base for relevant finance documents and generates a response using retrieval-augmented generation.
+3. The API Gateway triggers an AWS Lambda function that processes the query. The function calls Amazon Bedrock using the **retrieve_and_generate** method, which searches a pre-configured knowledge base for relevant finance documents and generates a response using retrieval-augmented generation.
 4. The Lambda function returns the generated answer to API Gateway, which then sends it back to the React app. The response is rendered in the chat window, with Markdown formatting applied for better readability.
 5. Each new query is processed in real-time, allowing for a dynamic and interactive conversation that adapts based on the information stored in your knowledge base.
 
