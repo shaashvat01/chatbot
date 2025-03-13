@@ -1,42 +1,134 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Reset some default margins/padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Make the app take the full viewport height */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f2f2f2;
+  padding: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Chat Header */
+.chat-header {
+  margin-bottom: 20px;
+}
+
+.chat-header h1 {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* The chat window */
+.chat-container {
+  width: 100%;
+  max-width: 600px;
+  height: 750px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  overflow-y: auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Chat bubble styles */
+.chat-bubble {
+  padding: 10px 14px;
+  margin: 6px 0;
+  border-radius: 6px;
+  max-width: 80%;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+/* User message on the right */
+.user-bubble {
+  background-color: #cfe9ff;
+  align-self: flex-end;
+}
+
+/* Bot message on the left */
+.bot-bubble {
+  background-color: #e6e6e6;
+  align-self: flex-start;
+}
+
+/* Input area */
+.input-container {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-container input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.input-container button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  background-color: #1890ff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.input-container button:hover {
+  background-color: #40a9ff;
+}
+
+/* Example: .markdown is a wrapper class around ReactMarkdown */
+.markdown h1 {
+  font-size: 1.2rem;
+  margin: 1em 0 0.5em;
+}
+.markdown h2 {
+  font-size: 1.1rem;
+  margin: 0.75em 0 0.5em;
+}
+.markdown ul {
+  list-style: disc;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+.markdown ol {
+  list-style: decimal;
+  margin-left: 1em; /* Ensure numbered lists also have a modest margin */
+  margin-bottom: 1em;
+}
+.markdown li {
+  margin-bottom: 0.5em;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  .chat-container {
+    max-width: 95%;
   }
-  to {
-    transform: rotate(360deg);
+  .input-container {
+    max-width: 95%;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .chat-header h1 {
+    font-size: 1.5rem;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
